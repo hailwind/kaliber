@@ -1,5 +1,5 @@
 /*
-   Copyright © 2019, 2020 M.Watermann, 10247 Berlin, Germany
+   Copyright © 2019, 2024 M.Watermann, 10247 Berlin, Germany
                   All rights reserved
                EMail : <support@mwat.de>
 */
@@ -33,11 +33,11 @@ func Test_BookFieldVisible(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := BookFieldVisible(tt.args.aFieldname)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("BookFieldVisible() error = %w, wantErr %v", err, tt.wantErr)
+				t.Errorf("BookFieldVisible() error = '%v', wantErr '%v'", err, tt.wantErr)
 				return
 			}
 			if got != tt.want {
-				t.Errorf("BookFieldVisible() = %v, want %v", got, tt.want)
+				t.Errorf("BookFieldVisible() = '%v,' want '%v'", got, tt.want)
 			}
 		})
 	}
@@ -63,14 +63,14 @@ func Test_mdGetFieldData(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := mdGetFieldData(tt.args.aKey)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("mdGetFieldData() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("mdGetFieldData() error = '%v', wantErr '%v'", err, tt.wantErr)
 				return
 			}
 			// if !reflect.DeepEqual(got, tt.want) {
-			// 	t.Errorf("mdGetFieldData() = %v, want %v", got, tt.want)
+			// 	t.Errorf("mdGetFieldData() = '%v', want '%v'", got, tt.want)
 			// }
 			if 0 == len(got) {
-				t.Errorf("mdGetFieldData() = %v, want %v", len(got), "> 0")
+				t.Errorf("mdGetFieldData() = '%v', want '%v'", len(got), "> 0")
 			}
 		})
 	}
@@ -88,10 +88,10 @@ func Test_mdReadBookDisplayFields(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := mdReadBookDisplayFields(); (err != nil) != tt.wantErr {
-				t.Errorf("mdReadBookDisplayFields() error = %w, wantErr %v", err, tt.wantErr)
+				t.Errorf("mdReadBookDisplayFields() error = '%v', wantErr '%v'", err, tt.wantErr)
 			}
 			if nil == mdBookDisplayFieldsList {
-				t.Errorf("mdReadBookDisplayFields() error = %v, want %s", nil, "!nil")
+				t.Errorf("mdReadBookDisplayFields() error = '%v', want '%s'", nil, "!nil")
 			}
 		})
 	}
@@ -109,10 +109,10 @@ func Test_mdReadFieldMetadata(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := mdReadFieldMetadata(); (err != nil) != tt.wantErr {
-				t.Errorf("mdReadFieldMetadata() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("mdReadFieldMetadata() error = '%v', wantErr '%v'", err, tt.wantErr)
 			}
 			if 0 == len(*mdFieldsMetadataList) {
-				t.Errorf("GetVirtLibList() = %v, want %v", len(*mdFieldsMetadataList), "> 0")
+				t.Errorf("GetVirtLibList() = '%v', want '%v'", len(*mdFieldsMetadataList), "> 0")
 			}
 		})
 	}
@@ -130,7 +130,7 @@ func Test_mdReadHiddenVirtualLibraries(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := mdReadHiddenVirtualLibraries(); (err != nil) != tt.wantErr {
-				t.Errorf("mdReadHiddenVirtualLibraries() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("mdReadHiddenVirtualLibraries() error = '%v', wantErr '%v'", err, tt.wantErr)
 			}
 		})
 	}
@@ -151,11 +151,11 @@ func Test_mdReadMetadataFile(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			err := mdReadMetadataFile()
 			if (err != nil) != tt.wantErr {
-				t.Errorf("mdReadMetadataFile() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("mdReadMetadataFile() error = '%v', wantErr '%v'", err, tt.wantErr)
 				return
 			}
 			if 0 == len(*mdMetadataDbPrefs) {
-				t.Errorf("mdReadMetadataFile() = %v, want %v", len(*mdMetadataDbPrefs), "> 0")
+				t.Errorf("mdReadMetadataFile() = '%v', want '%v'", len(*mdMetadataDbPrefs), "> 0")
 			}
 		})
 	}
@@ -173,10 +173,10 @@ func Test_mdReadVirtualLibraries(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := mdReadVirtualLibraries(); (err != nil) != tt.wantErr {
-				t.Errorf("mdReadVirtualLibraries() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("mdReadVirtualLibraries() error = '%v', wantErr '%v'", err, tt.wantErr)
 			}
 			if 0 == len(*mdVirtLibsRaw) {
-				t.Errorf("mdReadVirtualLibraries() = %v, want %v", len(*mdVirtLibsRaw), "> 0")
+				t.Errorf("mdReadVirtualLibraries() = '%v', want '%v'", len(*mdVirtLibsRaw), "> 0")
 			}
 		})
 	}
@@ -196,11 +196,11 @@ func Test_mdVirtualLibDefinitions(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := mdVirtLibDefinitions()
 			if (err != nil) != tt.wantErr {
-				t.Errorf("mdVirtualLibDefinitions() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("mdVirtualLibDefinitions() error = '%v', wantErr '%v'", err, tt.wantErr)
 				return
 			}
 			if 0 == len(*got) {
-				t.Errorf("mdVirtualLibDefinitions() = %v, want %v", len(*got), "> 0")
+				t.Errorf("mdVirtualLibDefinitions() = '%v', want '%v'", len(*got), "> 0")
 			}
 		})
 	}
@@ -229,11 +229,11 @@ func Test_MetaFieldValue(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := MetaFieldValue(tt.args.aField, tt.args.aKey)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("GetMetaFieldValue() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("GetMetaFieldValue() error = '%v', wantErr '%v'", err, tt.wantErr)
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("GetMetaFieldValue() = %v, want %v", got, tt.want)
+				t.Errorf("GetMetaFieldValue() = '%v', want '%v'", got, tt.want)
 			}
 		})
 	}
@@ -254,11 +254,11 @@ func Test_VirtualLibraryList(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := VirtualLibraryList()
 			if (err != nil) != tt.wantErr {
-				t.Errorf("VirtualLibraryList() error = %v,\nwantErr %v", err, tt.wantErr)
+				t.Errorf("VirtualLibraryList() error = '%v',\nwantErr '%v'", err, tt.wantErr)
 				return
 			}
 			if 0 == len(got) {
-				t.Errorf("VirtualLibraryList() = %v, want %v", len(got), "> 0")
+				t.Errorf("VirtualLibraryList() = '%v', want '%v'", len(got), "> 0")
 			}
 		})
 	}
@@ -280,7 +280,7 @@ func Test_VirtLibOptions(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := VirtLibOptions(tt.args.aSelected); 0 == len(got) {
-				t.Errorf("GetVirtLibOptions() = %v,\nwant %v", got, "> 0")
+				t.Errorf("GetVirtLibOptions() = '%v',\nwant '%v'", got, "> 0")
 			}
 		})
 	}
