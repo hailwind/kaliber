@@ -14,12 +14,12 @@
 
 ## Purpose
 
-This pseudo package consolidates the functions needed to access the `Calibre` database.
+This internal package consolidates the functions needed to access the `Calibre` database.
 I wanted all this files together in one place to better design their interactions and perform tests as needed.
 
 ## Usage
 
-This pseudo package is _not_ meant to be used from outside `Kaliber`.
+This internal package is _not_ meant to be used from outside `Kaliber`.
 
 ## Libraries
 
@@ -30,7 +30,7 @@ The following external libraries were used building `kaliber/db`:
 
 ## Licence
 
-        Copyright © 2019, 2020 M.Watermann, 10247 Berlin, Germany
+        Copyright © 2019, 2024 M.Watermann, 10247 Berlin, Germany
                         All rights reserved
                     EMail : <support@mwat.de>
 
