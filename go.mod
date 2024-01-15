@@ -1,6 +1,6 @@
 module github.com/mwat56/kaliber
 
-go 1.19
+go 1.21
 
 require (
 	github.com/NYTimes/gziphandler v1.1.1
@@ -9,18 +9,18 @@ require (
 	github.com/mwat56/errorhandler v1.1.10
 	github.com/mwat56/ini v1.5.3
 	github.com/mwat56/jffs v0.1.4
-	github.com/mwat56/kaliber/db v0.0.0-20200628164257-a70222c3e52a
-	github.com/mwat56/passlist v1.3.8
+	github.com/mwat56/kaliber/db v0.0.0-20230309215109-1c5b592b38b8
+	github.com/mwat56/passlist v1.3.10
 	github.com/mwat56/sessions v0.3.15
 	github.com/mwat56/whitespace v0.2.3
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
 )
 
 require (
-	github.com/mattn/go-sqlite3 v1.14.16 // indirect
-	golang.org/x/crypto v0.7.0 // indirect
-	golang.org/x/sys v0.6.0 // indirect
-	golang.org/x/term v0.6.0 // indirect
+	github.com/mattn/go-sqlite3 v1.14.19 // indirect
+	golang.org/x/crypto v0.18.0 // indirect
+	golang.org/x/sys v0.16.0 // indirect
+	golang.org/x/term v0.16.0 // indirect
 )
 
 replace (
