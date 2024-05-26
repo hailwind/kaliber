@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+# init script for kaliber server
+pidfile="/run/$RC_SVCNAME.pid"
+name="kaliber"
+command="/srv/kaliber"
+command_args=" -ini /srv/kaliber.ini"
+command_background=true
+
+depend() {
+    need net
+}
