@@ -151,9 +151,9 @@ func (ph *TPageHandler) basicTemplateData(aRequest *http.Request, aOptions *db.T
 	var lang, theme string
 	switch aOptions.GuiLang {
 	case db.QoLangEnglish:
-		lang = `en`
-	default: // case db.QoLangGerman:
 		lang = `de`
+	default: // case db.QoLangGerman:
+		lang = `en`
 	}
 
 	switch aOptions.Theme {

@@ -534,9 +534,9 @@ func (db *TDataBase) doQueryAll(aContext context.Context, aQuery string) (rList 
 		if visible, _ = BookFieldVisible(`languages`); visible {
 			doc.languages = prepLanguages(languages)
 		}
-		if visible, _ = BookFieldVisible(`#pages`); visible {
-			doc.Pages = prepPages(doc.path)
-		}
+		// if visible, _ = BookFieldVisible(`#pages`); visible {
+		// 	doc.Pages = prepPages(doc.path)
+		// }
 		if visible, _ = BookFieldVisible(`path`); !visible {
 			doc.path = ``
 		}
